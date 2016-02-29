@@ -4,31 +4,27 @@ Stock.destroy_all
 MutualFundStock.destroy_all
 
 kayvon = MutualFund.create({
-	name: "Kayvon's Underpaid and Starving Children Mutual Fund"
+	name: "American Trust Allegiance"
 })
 
-# thomas = MutualFund.create({
-# 	name: "Thomas' Guns R Us Mutual Fund"
-# })
-
 thomas = MutualFund.create({
-	name: "Bam! Bam! Thomas' 2 Gunz Mutual Fund"
+	name: "Dreyfus Premier Third Century A"
 })
 
 joe = MutualFund.create({
-	name: "Joe's Underfluffed and Stuffingless Pillows Mutual Fund"
+	name: "Integrity Growth & Income Fund"
 })
 
 breon = MutualFund.create({
-	name: "Breon's Virtual Reality Cow Wrangling Simulator Mutual Fund"
+	name: "MMA Praxis Core Stock A"
 })
 
 noah = MutualFund.create({
-	name: "Noah's Two Kids and One Grown Man Poking Trials Mutual Fund"
+	name: "Parnassus Equity Income"
 })
 
 rich = MutualFund.create({
-	name: "Rich Using Maps API Creatively Mutual Fund"
+	name: "Utopia Growth Fund"
 })
 
 ############## Technology ################
@@ -37,7 +33,7 @@ amazon = Stock.create({
 	name: "Amazon.com Inc",
 	ticker: "AMZN",
 	industry: "Technology",
-	description: "We're not profittable, but will be soon",
+	description: "Leader in the E-Commerce Business.",
 	price: 10
 })
 
@@ -45,7 +41,7 @@ google = Stock.create({
 	name: "Google",
 	ticker: "GOOGL",
 	industry: "Technology",
-	description: "Next year we're rebranding ourselves as Skynet",
+	description: "Search Engine Giant.",
 	price: 5
 })
 
@@ -53,7 +49,7 @@ facebook = Stock.create({
 	name: "Facebook",
 	ticker: "FB",
 	industry: "Technology",
-	description: "We make money off of your information!",
+	description: "Social Network Company.",
 	price: 8
 })
 
@@ -61,7 +57,7 @@ apple = Stock.create({
 	name: "Apple",
 	ticker: "AAPL",
 	industry: "Technology",
-	description: "Onto the Apple Car!",
+	description: "Think Different.",
 	price: 6
 })
 
@@ -69,7 +65,7 @@ microsoft = Stock.create({
 	name: "Microsoft",
 	ticker: "MSFT",
 	industry: "Technology",
-	description: "One ant at a time...",
+	description: "Software and Cloud Company.",
 	price: 23
 })
 
@@ -79,7 +75,7 @@ chevron = Stock.create({
 	name: "Chevron",
 	ticker: "CVX",
 	industry: "Oil",
-	description: "That's what a Chevron is?",
+	description: "Oil Giant.",
 	price: 85
 })
 
@@ -87,7 +83,7 @@ exxon = Stock.create({
 	name: "ExxonMobil",
 	ticker: "XOM",
 	industry: "Oil",
-	description: "I don't know much about this company.",
+	description: "Energy Company.",
 	price: 32
 })
 
@@ -95,7 +91,7 @@ royal = Stock.create({
 	name: "Royal Dutch Shell",
 	ticker: "RDS",
 	industry: "Oil",
-	description: "Ductch Shells that are royalty.",
+	description: "Oil and Gas Company.",
 	price: 45
 })
 
@@ -111,7 +107,7 @@ valero = Stock.create({
 	name: "Valero Energy",
 	ticker: "VLO",
 	industry: "Oil",
-	description: "Umm yeah Valero!",
+	description: "International Manufacturer of Fuels.",
 	price: 22
 })
 
@@ -121,7 +117,7 @@ phillip = Stock.create({
 	name: "Phillip Morris",
 	ticker: "PM",
 	industry: "Tobacco",
-	description: "We own a lot of things, but now we're known for tobacco.",
+	description: "Manufacturer of Cigarettes and Tobacco Products.",
 	price: 20
 })
 
@@ -129,7 +125,7 @@ altria = Stock.create({
 	name: "Altria",
 	ticker: "MO",
 	industry: "Tobacco",
-	description: "Smoking kills... come smoke our safe cigarettes!",
+	description: "Creates Smokeable and Smokless Products.",
 	price: 13
 })
 
@@ -137,7 +133,7 @@ reynolds = Stock.create({
 	name: "Reynolds American",
 	ticker: "RAI",
 	industry: "Tobacco",
-	description: "No relation to Ryan.",
+	description: "Just Another Tobacco Company.",
 	price: 76
 })
 
@@ -145,7 +141,7 @@ vector = Stock.create({
 	name: "Vector Group",
 	ticker: "VGR",
 	industry: "Tobacco",
-	description: "Vector, sounds like the name of VG character.",
+	description: "Manufacturer and Sale of Cigarettes.",
 	price: 65
 })
 
@@ -153,7 +149,7 @@ lorillard = Stock.create({
 	name: "Lorillard Inc.",
 	ticker: "LO",
 	industry: "Tobacco",
-	description: "Don't know what a lorillard is.",
+	description: "Creates Cigarettes and E-Cigarettes.",
 	price: 6
 })
 
@@ -163,7 +159,7 @@ visa = Stock.create({
 	name: "Visa Inc",
 	ticker: "V",
 	industry: "Finance",
-	description: "You have Mastercard? Ha! HA! HAHAHAHAH!",
+	description: "Payment Technology Company",
 	price: 20
 })
 
@@ -171,7 +167,7 @@ jpm = Stock.create({
 	name: "JP Morgan",
 	ticker: "JPM",
 	industry: "Finance",
-	description: "Big bank!",
+	description: "Most Well Known Bank",
 	price: 29
 })
 
@@ -179,7 +175,7 @@ wfc = Stock.create({
 	name: "Wells Fargo",
 	ticker: "WFC",
 	industry: "Finance",
-	description: "Didn't bet on housing in 2008",
+	description: "American Multinational Bank.",
 	price: 4
 })
 
@@ -187,7 +183,7 @@ citi = Stock.create({
 	name: "Citigroup Inc",
 	ticker: "C",
 	industry: "Finance",
-	description: "This bank sucks",
+	description: "Consumer Banking Operations Company.",
 	price: 2
 })
 
@@ -195,7 +191,7 @@ bac = Stock.create({
 	name: "Bank of America",
 	ticker: "BAC",
 	industry: "Finance",
-	description: "Another terrible terrible bank.",
+	description: "Financial Holding Company.",
 	price: 3
 })
 
@@ -204,7 +200,7 @@ underarmour = Stock.create({
 	name: "UnderArmour",
 	ticker: "UA",
 	industry: "Retail",
-	description: "Up 23% today.",
+	description: "Branded performance apparel.",
 	price: 3
 })
 
@@ -212,7 +208,7 @@ macy = Stock.create({
 	name: "Macy's",
 	ticker: "M",
 	industry: "Retail",
-	description: "Who doesn't know Macy's?",
+	description: "Omnichannel Retial Company",
 	price: 3
 })
 
@@ -220,7 +216,7 @@ nordstrom = Stock.create({
 	name: "Nordstrom's",
 	ticker: "JWN",
 	industry: "Retail",
-	description: "It's uh...big",
+	description: "High End Retailer.",
 	price: 3
 })
 
@@ -228,7 +224,7 @@ nike = Stock.create({
 	name: "Nike",
 	ticker: "NKC",
 	industry: "Retail",
-	description: "Shoes shoes and more shoes!",
+	description: "Sports Conglomerate.",
 	price: 3
 })
 
@@ -236,7 +232,7 @@ gap = Stock.create({
 	name: "Gap",
 	ticker: "GPS",
 	industry: "Retail",
-	description: "Gap cause that makes sense for clothes",
+	description: "Apparel Retailer.",
 	price: 3
 })
 
