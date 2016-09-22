@@ -8,13 +8,12 @@ class MutualFund < ActiveRecord::Base
 	has_many :user_mutual_funds
   has_many :users, :through => :user_mutual_funds
 
-  #returns all the mutual funds that include a stock within a given industry
-  def self.industry_in_mf(industry)
+  def self.stocks_for_industry(industry)
   	joins(:stocks).where(stocks: {industry: industry}).uniq
   end
 
   def self.search(search)
-    where("industry ILIKE ?", "%#{search}%")
+    joins(:stocks).where("industry ILIKE ?", "%#{search}%")
   end
 
   #Code we got from Nathan, returns a hash showing all industries and

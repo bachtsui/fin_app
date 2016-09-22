@@ -1,32 +1,35 @@
 class UsersController < ApplicationController
-  before_action :logged_in?, only: [:show, :edit, :update]  
+  before_action :logged_in?, only: [:show, :edit, :update]
 
   def index
   end
 
   def new
     @user = User.new
+    @title = "Sign Up"
   end
 
   def create
     @user = User.new(user_params)
 
     if @user.save
-      login(@user) 
+      login(@user)
       redirect_to @user
     else
       flash[:error] = @user.errors.full_messages.join(", ")
-      redirect_to new_user_path
+      render :new # Super important to render original form so that user's data is not lost!
     end
 
   end
 
   def show
     @user = User.friendly.find(params[:id])
+    @title = "Welcome, #{@user.first_name} #{@user.last_name} "
     @mutualfunds = @user.mutual_funds
   end
 
   def edit
+    @title = "Edit Profile"
     if current_user == set_user
       render :edit
     else
@@ -47,6 +50,7 @@ class UsersController < ApplicationController
   end
 
   def destroy
+    #TODO: what if I'm not authorized (logged in?)?
     @user = User.friendly.find(params[:id])
     if current_user == @user
       @user.destroy
@@ -59,24 +63,24 @@ class UsersController < ApplicationController
   end
 
   def add_mutual_fund
-    user = current_user
+    #TODO: what if I'm not authorized (logged in?)?
     mutual_fund = MutualFund.friendly.find(params[:user][:mutual_fund_id])
-    
-    if user.mutual_funds.include?(mutual_fund)
+
+    if current_user.mutual_funds.include?(mutual_fund)
       flash[:notice] = "You already have this mutual fund in your portfolio"
     else
-      user.mutual_funds << mutual_fund
+      current_user.mutual_funds << mutual_fund
       flash[:notice] = "You have successfully added a portfolio"
     end
     redirect_to mutual_fund_path(mutual_fund)
   end
-  
+
   def delete_mutual_fund
-    user = current_user
+    #TODO: what if I'm not authorized (logged in?)?
     mutual_fund = MutualFund.friendly.find(params[:user][:mutual_fund_id])
-    user.mutual_funds.delete(mutual_fund)
+    current_user.mutual_funds.delete(mutual_fund)
     flash[:notice] = "You have successfully deleted your portfolio"
-    redirect_to user_path(user)
+    redirect_to user_path(current_user)
   end
 
   private
@@ -86,7 +90,8 @@ class UsersController < ApplicationController
   end
 
   def set_user
-    user_id = params[:id] || current_user.id
+    # TODO: clarify what this is doing and how it is different from current_user
+    user_id = params[:id] || current_user.id # TODO: this doesn't seem right - could be a username or an id number!
     @user = User.friendly.find(user_id)
   end
 

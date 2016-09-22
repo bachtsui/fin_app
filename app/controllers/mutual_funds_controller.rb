@@ -1,6 +1,7 @@
 class MutualFundsController < ApplicationController
 
   def index
+    @title = "Mutal Funds"
     @mutualfunds = MutualFund.all
     # @mutualfunds.each do |mf|
     # 	@stocks = mf.stocks
@@ -9,22 +10,14 @@ class MutualFundsController < ApplicationController
   end
 
   def show
+    @title = "Portfolio"
     @mutualfund = MutualFund.friendly.find(params[:id])
-    @stocks = @mutualfund.stocks
-
-    @industry_counts = @mutualfund.stock_dollar_amounts_by_industry
-    #Inaccurate variable name for line 16, should be something like
-    #@investment_by_industry
-  
-    if current_user !=nil
-      @user = User.friendly.find(current_user.id)
-    else
-      current_user = nil
-    end
   end
 
   def search
-    @mutualfunds = MutualFund.industry_in_mf(params[:search])
+    @title = "Search"
+    @mutualfunds = MutualFund.stocks_for_industry(params[:search])
+    #TODO: What if params[:search] is empty? 1 letter?
   end
 
 end
